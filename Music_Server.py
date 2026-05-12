@@ -3,8 +3,9 @@ import requests
 
 app = Flask(__name__)
 
-YOUTUBE_API_KEY = "AIzaSyDCBoK61x6Y6AgvK3ato4Ogzpt4Z4DB074"  # ← paste your restricted API key
+YOUTUBE_API_KEY = "AIzaSyDCBoK61x6Y6AgvK3ato4Ogzpt4Z4DB074"  
 
+# Emotion to music genre mapping 
 EMOTION_CONFIG = {
     "CALM": {
         "query": "ambient classical relaxing music no copyright",
@@ -23,7 +24,7 @@ EMOTION_CONFIG = {
     }
 }
 
-# ── State ─────────────────────────────────────────────────────────
+# Server state 
 current_emotion = None
 current_songs   = []
 
@@ -226,7 +227,7 @@ def status():
         "songs_count":     len(current_songs)
     })
 
-
+# Entry point 
 if __name__ == '__main__':
     print("=" * 55)
     print("🎵 BioSync AIoT — YouTube Music Server")
